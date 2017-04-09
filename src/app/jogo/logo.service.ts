@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import {Logo} from './logo';
+import { Logo } from './Logo';
 import {MockLogos} from './mock-logos';
 
 @Injectable()
