@@ -1,0 +1,82 @@
+@media (max-width: 767px) {    
+  body,h1,span,button { 
+    font-size: 12px; 
+  }
+} 
+@media (max-width: 1200px) {    
+  body,h1,span,button { 
+    font-size: 16px; 
+  }
+} 
+@media (min-width: 1200px) {    
+  body,h1,span,button { 
+    font-size: 20px; 
+  }
+}
+
+  body { 
+    font-size: 20px; 
+    }
+ 
+ h1 {
+      color: #FFFFFF;
+      background-color: #448AA5;
+      padding: 15px;
+      font-weight:bold;
+    }
+    
+    .cards div {
+      display:inline-block;
+      cursor: pointer;
+      background-color:#448AA5;
+      /*background-image:url("../assets/img/cover.jpg");*/
+      background-size: 100px 100px;
+      margin-top: 10px;
+      margin-right: 35px;
+      border-radius: 4px;
+      width:100px !important;
+      height:100px !important;
+      -webkit-transition: background-color 2s;
+      transition: background-color 2s;
+      padding-left:0px !important;
+ 
+    }
+
+    .cards p{
+      display: none;
+    }
+
+   
+    .cards div.encontrado {
+      background-color: #FFFFFF !important;
+      cursor: auto !important;
+    }
+
+     .cards p.virado {
+      display:block;
+      font-size:12px;
+    }
+
+    .cards div:hover {
+      border-bottom-right-radius:15px;
+      background-color: #4CAF50;
+    }
+    img {
+    	width:100px;
+    	height:100px;
+    }
+    .panel-top {
+      margin-top:10px;
+      color: #448AA5;
+      font-weight: bold;
+    }
+    button.reset {
+      cursor: pointer;
+      text-align: center;
+      border: none;
+      border-radius: 4px;
+      color: white;
+      margin-right: 10px;
+      text-align: center;
+      display: inline-block;
+    }

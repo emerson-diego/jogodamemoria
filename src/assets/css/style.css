@@ -1,0 +1,83 @@
+
+
+/* ==========================================================================
+   Cabeçalho do portal
+   ========================================================================== */
+
+#header {
+    padding: 32px 0 0 0;
+    /*background-color: #19882c;*/
+    /* Old browsers */
+    /*background-color: #0A5517;*/
+
+    /*background: transparent url('../images/bg-header.jpg') repeat-x bottom center !important;*/
+
+    background: #000000;
+    background: -webkit-linear-gradient(to left, #000000 , #e74c3c);
+    background: linear-gradient(to left, #000000 , #e74c3c);
+
+    /*background-image: -moz-radial-gradient(center, ellipse cover, #19882c 1%, #025310 100%);*/
+    /* FF3.6+ */
+    /*background-image: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#19882c), color-stop(100%, #025310));
+    /* Chrome,Safari4+ */
+    /*background-image: -webkit-radial-gradient(center, ellipse cover, #19882c 1%, #025310 100%);*/
+    /* Chrome10+,Safari5.1+ */
+    /*background-image: -o-radial-gradient(center, ellipse cover, #19882c 1%, #025310 100%);*/
+    /* Opera 12+ */
+    /*background-image: -ms-radial-gradient(center, ellipse cover, #19882c 1%, #025310 100%);*/
+    /* IE10+ */
+    /*background-image: radial-gradient(ellipse at center, #19882c 1%, #025310 100%);*/
+    color: #fff;
+    /* IE6-9 fallback on horizontal gradient */
+    filter:progid: DXImageTransform.Microsoft.gradient( startColorstr="#19882c", endColorstr="#025310",GradientType=1);
+}
+
+/* Menu da Barra
+   ========================================================================== */
+
+div#wrapper-barra-brasil {
+    clear: both;
+    top: -18px;
+}
+
+
+
+/* Titulo do portal
+   ========================================================================== */
+
+#portal-logo,
+#portal-title { color: #fff !important; }
+#portal-title-1 { top: 12px; }
+
+/* Menu site actions - Acessibilidade, Alto Contraste, Mapa do site
+   ========================================================================== */
+
+
+
+/* Menu sobre o portal
+   ========================================================================== */
+
+#sobre { /*background: #00420c;*/ background: #7B1616; }
+
+#sobre a { color: #fff; 
+            background-color: #7B1616; 
+}
+
+#sobre .portalservicos-item a { border-right: 1px solid #6c9072; }
+
+
+
+
+
+
+/* ícone do botão */
+
+#content  #tile_banner_rotativo li .button-nav,
+.orderTiles .button-nav {
+    background-image: url("../img/bullet-banner-rotativo.gif");
+}
+
+/* Tiles
+   ========================================================================== */
+
+.tile a { color: #7B1616 !important; }

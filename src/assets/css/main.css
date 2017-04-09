@@ -1,0 +1,98 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    vertical-align: baseline;
+}
+
+
+#logo {
+   
+    margin-left: 10px;
+    float: left;
+    padding: 0;
+    width: 70%;
+}
+
+#logo span {
+    position: absolute;
+    display: block;
+    line-height: 1em;
+}
+
+#portal-logo {
+    display: block;
+    margin: 0;
+    width: 100%;
+}
+
+#portal-title {
+    margin: 0;
+    margin: 30px 0 46px;
+    color: #fff;
+    font-size: 3.35em;
+    font-family: "open_sansbold", Arial, Helvetica, sans-serif;
+    line-height: 1em;
+}
+
+#logo .logo {
+    margin-bottom: 0.2em;
+    font-size: 3em !important;
+    line-height: 1.1em;
+}
+
+#portal-description {
+    bottom: 24px;
+    text-transform: uppercase;
+    font-size: 1.2em;
+}
+
+
+
+
+
+
+/* Menu sobre o portal
+   ========================================================================== */
+
+#sobre {
+    clear: both;
+    margin: 0;
+    padding: 20px 0;
+    max-width: 100% !important;
+    line-height: 20px;
+    margin-bottom:20px;
+    vertical-align: baseline;
+
+}
+
+#sobre ul {
+    margin: 0 auto;
+    text-align: right;
+}
+
+#sobre .portalservicos-item a { padding: 0 10px; }
+
+#sobre .last-item a {
+    padding: 0 0 0 10px;
+    border-right: none !important;
+}
+
+#obs{
+     font-weight: bold;
+}
+
+.menu-categoria{
+
+    margin: 10px 0px;
+    background-color: #7B1616;
+    font-weight: bold;
+    color: white;
+    font-size: 16px;
+    padding:5px;
+
+}
+
+
+
