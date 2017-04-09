@@ -1,16 +1,37 @@
-@media (max-width: 767px) {    
+@media (max-width: 600px) {    
   body,h1,span,button { 
     font-size: 12px; 
   }
+
+  .cards div {
+     margin-right: 10px;
+     background-size: 80px 80px;
+      width:80px !important;
+      height:80px !important;
+  }
 } 
-@media (max-width: 1200px) {    
+@media (min-width: 600px) {    
   body,h1,span,button { 
     font-size: 16px; 
+  }
+
+   .cards div {
+     margin-right: 20px;
+     background-size: 90px 90px;
+      width:90px !important;
+      height:90px !important;
   }
 } 
 @media (min-width: 1200px) {    
   body,h1,span,button { 
     font-size: 20px; 
+  }
+
+   .cards div {
+     margin-right: 35px;
+     background-size: 100px 100px;
+      width:100px !important;
+      height:100px !important;
   }
 }
 
@@ -30,12 +51,8 @@
       cursor: pointer;
       background-color:#448AA5;
       /*background-image:url("../assets/img/cover.jpg");*/
-      background-size: 100px 100px;
       margin-top: 10px;
-      margin-right: 35px;
       border-radius: 4px;
-      width:100px !important;
-      height:100px !important;
       -webkit-transition: background-color 2s;
       transition: background-color 2s;
       padding-left:0px !important;
