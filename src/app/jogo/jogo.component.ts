@@ -98,7 +98,7 @@ export class JogoComponent implements OnInit {
                   card.imagem = "url(" + 'assets/' + this.logos[card.idLogo].imagem + ")";
                   this.canFlip = false;
                 });
-              }, 1500);
+              }, 500);
 
             }
           }
@@ -110,7 +110,7 @@ export class JogoComponent implements OnInit {
 
           this.canFlip = true;
 
-        }, 500);
+        }, 900);
 
 
 
