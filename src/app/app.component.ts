@@ -10,15 +10,15 @@ export class AppComponent implements OnInit {
 
   title = 'Jogo da Memória dos \"Heróis Brasileiros\"';
 
-  cliques: number;
+  //cliques: number;
 
   ngOnInit(): void {
-    this.cliques = 0;
+    //this.cliques = 0;
   }
 
   onValorMudou(event) {
-    this.cliques = event;
-    console.log(this.cliques);
+    //this.cliques = event;
+    //console.log(this.cliques);
     
   }
 

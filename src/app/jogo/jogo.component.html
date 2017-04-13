@@ -1,17 +1,31 @@
-<div class="panel-top">
-	<button type="button" class="reset btn btn-primary" (click)="onReset()" style="margin-left:0px !important;">{{textButton}}</button>	{{textInfo}}
-</div>
+<div class="col-md-9">
 
-<br/>
-
-<div class="cards row">
-	<div *ngFor="let card of cards" class="col-md-12" [ngStyle]="{'background-image': card.imagem}" [class.encontrado]="card.encontrado"
-	 (click)="onFlip(card)">
-		<p style="background-color:white;  position: absolute;
-        bottom: 0;width:100%; " [class.virado]="card.virado">{{logos[card.idLogo].name}}</p>
+	<div class="panel-top">
+		<button type="button" class="reset btn btn-primary" (click)="onReset()" style="margin-left:0px !important;">Novo Jogo</button>		
+		{{this.tentativas}} tentativa(s)
 	</div>
 
+	<br/>
+
+	<div class="cards row">
+		<div *ngFor="let card of cards" class="col-md-12" [ngStyle]="{'background-image': card.imagem}" [class.encontrado]="card.encontrado"
+		 (click)="onFlip(card)">
+			<p style="background-color:white;  position: absolute;
+        bottom: 0;width:100%; " [class.virado]="card.virado">{{logos[card.idLogo].name}}</p>
+		</div>
+
+	</div>
+
+
+
 </div>
+
+<div class="col-md-3">
+	<app-ranking></app-ranking>
+</div>
+
+
+
 
 <!-- Pré carregamento das imagens -->
 <div *ngFor="let card of cards" style="display:none">

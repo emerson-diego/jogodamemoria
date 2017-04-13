@@ -1,16 +1,5 @@
 <div class="container">
-	<h1>{{title}}</h1>
-
-
-	<div class="col-md-9">
-		<app-jogo [cliques]="cliques" (mudouValor)="onValorMudou($event)"></app-jogo>
-
-	</div>
-
-	<div class="col-md-3">
-		<app-ranking [cliques]="cliques"></app-ranking>
-	
-
-	</div>
+  <h1>{{title}}</h1>
+  <flash-messages></flash-messages>
+  <router-outlet></router-outlet>
 </div>
-

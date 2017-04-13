@@ -1,3 +1,8 @@
-<p>
-  ranking works! {{cliques}}
-</p>
+<h1>Ranking - TOP 10</h1>
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let registroPontuacao of listaPontuacao, let i = index">
+
+    <div *ngIf="i<11">
+      {{registroPontuacao.nome}} - {{registroPontuacao.pontuacao}}
+    </div>
+</ul>
