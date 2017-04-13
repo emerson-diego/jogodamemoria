@@ -1,7 +1,7 @@
-
 import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
 
 import { FirebaseService} from './../shared/firebase.service';
+
 
 @Component({
   selector: 'app-ranking',
@@ -19,9 +19,15 @@ export class RankingComponent implements OnInit {
   ngOnInit() {
      this.firebaseService.getListings().subscribe(listaPontuacao => {
       console.log(listaPontuacao);
-      this.listaPontuacao = listaPontuacao;
+      this.listaPontuacao = listaPontuacao.sort(function(a, b){return b.pontuacao-a.pontuacao});
+   
     });
 
   }
+
+   ordenaLista(){
+      
+    }
+
 
 }

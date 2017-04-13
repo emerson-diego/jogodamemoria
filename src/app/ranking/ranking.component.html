@@ -2,7 +2,7 @@
 <ul class="list-group">
   <li class="list-group-item" *ngFor="let registroPontuacao of listaPontuacao, let i = index">
 
-    <div *ngIf="i<11">
-      {{registroPontuacao.nome}} - {{registroPontuacao.pontuacao}}
+    <div *ngIf="i<11" class="rankingFonte">
+     <img src="{{registroPontuacao.foto}}" width="40" height="40"/> {{registroPontuacao.nome}} - {{registroPontuacao.pontuacao}}
     </div>
 </ul>

@@ -25,9 +25,15 @@ export class JogoComponent implements OnInit {
   public record: number = Infinity;
   public tentativas: number;
 
-  private usuarioLogado: String;
+  private usuarioLogado: firebase.User;
+  public bonus: number;
+  private acertosConsecutivos: number;
+  private acertouAnteriormente: boolean;
+  public pontuacaoFinal: string;
+  public gameOver:boolean;
 
-  constructor(private _logoService: LogoService, private firebaseService: FirebaseService,
+  constructor(private _logoService: LogoService,
+    private firebaseService: FirebaseService,
     private usuarioLogadoService: UsuarioLogadoService) { }
 
   getLogos() {
@@ -39,14 +45,19 @@ export class JogoComponent implements OnInit {
 
   ngOnInit() {
     this.getLogos();
-    console.log('teste');
-    //console.log(this.usuarioLogado.getUsuarioLogado())
-    this.usuarioLogado = this.usuarioLogadoService.getUsuarioLogado();
-  
+    //console.log('teste');
+    // console.log(this.usuarioLogado.photoURL);
+    //console.log(this.usuarioLogado.displayName);
   }
 
+
   initBoard() {
+    this.usuarioLogado = this.usuarioLogadoService.getUsuarioLogado();
+    this.bonus = 0;
+    this.acertosConsecutivos = 0;
     this.tentativas = 0;
+    this.acertouAnteriormente = false;
+    this.gameOver= false;
     this.cards = [];
     var size = 2 * (this.logos.length);
     this.logos.forEach(logo => {
@@ -72,7 +83,7 @@ export class JogoComponent implements OnInit {
   onFlip(card: Card) {
 
     if (this.canFlip && card != this.cardAnterior && card.encontrado != true) {
-      
+
       card.imagem = "url(" + 'assets/' + this.logos[card.idLogo].imagem + ")";
       card.virado = true;
       if (this.cardAnterior == undefined) {
@@ -87,13 +98,20 @@ export class JogoComponent implements OnInit {
             card.encontrado = true;
             this.cardAnterior.encontrado = true;
 
-            var gameOver = true;
+            if (this.acertouAnteriormente) {
+              this.acertosConsecutivos++;
+              this.bonus += this.acertosConsecutivos;
+            }
+
+            this.acertouAnteriormente = true;
+
+            this.gameOver = true;
             this.cards.forEach(card => {
               if (!card.encontrado) {
-                gameOver = false;
+                this.gameOver = false;
               }
             });
-            if (gameOver) {
+            if (this.gameOver) {
 
               this.cardAnterior.encontrado = true;
               this.inserirPontuacaoRanking();
@@ -107,6 +125,12 @@ export class JogoComponent implements OnInit {
               }, 500);
 
             }
+
+
+          }
+          else { //não acertou
+            this.acertouAnteriormente = false;
+            this.acertosConsecutivos = 0;
           }
           card.virado = false;
           this.cardAnterior.virado = false;
@@ -133,19 +157,24 @@ export class JogoComponent implements OnInit {
 
   }
 
-  inserirPontuacaoRanking(){
+  inserirPontuacaoRanking() {
 
-   let pontuacaoFinal =100 - (this.tentativas);
+    let pontuacaoFim = 100 - (this.tentativas - 12) + this.bonus;
 
-     let registroPontuacao = {
-      nome: this.usuarioLogado,
-      pontuacao: pontuacaoFinal
+    let registroPontuacao = {
+      foto: this.usuarioLogado.photoURL,
+      nome: this.usuarioLogado.displayName,
+      pontuacao: pontuacaoFim,
+      data: new Date()
     }
 
-    
+    this.pontuacaoFinal = pontuacaoFim.toString();
     this.firebaseService.inserir(registroPontuacao);
 
   }
+
+
+
 
 
 }

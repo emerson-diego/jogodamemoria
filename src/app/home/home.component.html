@@ -1,6 +1,18 @@
-<div class="jumbotron text-center">
-  <div class="container">
-    <p>Favor, logue em uma das aplicações abaixo para ter acesso à aplicação</p>
-    <a (click)="login()"><img src="assets/img/google.png"></a>
-  </div>
+<div class="text-center">
+
+
+  <p>Favor, logue em uma das aplicações abaixo para ter acesso à aplicação</p>
+
+  <ul>
+    <li>
+      <a (click)="login('google')"><img src="assets/img/google.png"></a>
+    </li>
+    <li>
+      <a (click)="login('facebook')"><img src="assets/img/facebook.png"></a>
+    </li>
+    <li>
+      <a (click)="login('twitter')"><img src="assets/img/twitter.png"></a>
+    </li>
+  </ul>
+
 </div>

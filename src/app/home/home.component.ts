@@ -3,6 +3,7 @@ import { AngularFire } from 'angularfire2';
 import { FlashMessagesService } from 'angular2-flash-messages';
 import { Router } from '@angular/router';
 
+import { SocialLogin } from './../shared/social-login';
 import { UsuarioLogadoService } from './../shared/usuario-logado.service';
 
 @Component({
@@ -13,36 +14,28 @@ import { UsuarioLogadoService } from './../shared/usuario-logado.service';
 export class HomeComponent implements OnInit {
 
   usuario: firebase.User;
+  
 
   constructor(public af: AngularFire,
     public flashMessage: FlashMessagesService, private router: Router, 
-    private usuarioLogadoService: UsuarioLogadoService) {
-
-
+    private usuarioLogadoService: UsuarioLogadoService, private socialLogin: SocialLogin) {
 
   }
 
 
   ngOnInit() {
 
-    this.af.auth.subscribe(usuario => {
-      if (usuario) {
-        // user logged in
-        this.usuario = usuario.auth;
-        //  console.log(this.usuario);
-        console.log(usuario.auth.displayName);
-        this.usuarioLogadoService.setUsuarioLogado(usuario.auth.displayName);
-        this.router.navigate(['jogo']);
-      }
-    });
+    this.socialLogin.subscribe();
   }
 
-  login() {
-    this.af.auth.login();
+  login(provider:String) {
+    //this.af.auth.login();
+    this.socialLogin.login(provider);
 
   }
+
 
   ngOnDestroy() {
-    this.af.auth.unsubscribe();
+   //this.af.auth.unsubscribe();
   }
 }

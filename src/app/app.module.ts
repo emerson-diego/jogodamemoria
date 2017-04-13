@@ -11,6 +11,7 @@ import { AppComponent } from './app.component';
 import { JogoComponent } from './jogo/jogo.component';
 import { RankingComponent } from './ranking/ranking.component';
 import { HomeComponent } from './home/home.component';
+import { SocialLogin } from './shared/social-login';
 
 import {UsuarioLogadoService } from './shared/usuario-logado.service';
 import {FirebaseService} from './shared/firebase.service';
@@ -29,10 +30,10 @@ const appRoutes: Routes = [
   {path: 'jogo', component:JogoComponent}
 ]
 
-const firebaseAuthConfig = {
-  provider: AuthProviders.Google,
-  method: AuthMethods.Popup
-};
+//const firebaseAuthConfig = {
+  //provider: AuthProviders.Google,
+  //method: AuthMethods.Popup
+//};
 
 @NgModule({
   declarations: [
@@ -46,10 +47,10 @@ const firebaseAuthConfig = {
     FormsModule,
     HttpModule,
     FlashMessagesModule,
-    AngularFireModule.initializeApp(firebaseConfig,firebaseAuthConfig),
+    AngularFireModule.initializeApp(firebaseConfig),
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [MockLogos,FirebaseService,UsuarioLogadoService],
+  providers: [MockLogos,FirebaseService,UsuarioLogadoService, SocialLogin],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class UsuarioLogadoService {
 
-  usuarioLogado: String;
+  usuarioLogado: firebase.User;
 
   constructor() { }
 
 
-  setUsuarioLogado(usuarioLogado: String){
+  setUsuarioLogado(usuarioLogado: firebase.User){
     this.usuarioLogado = usuarioLogado;
   }
 

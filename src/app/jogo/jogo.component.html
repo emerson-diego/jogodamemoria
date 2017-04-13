@@ -2,7 +2,12 @@
 
 	<div class="panel-top">
 		<button type="button" class="reset btn btn-primary" (click)="onReset()" style="margin-left:0px !important;">Novo Jogo</button>		
-		{{this.tentativas}} tentativa(s)
+		{{this.tentativas}} tentativa(s) | Bônus por acertos Consecutivos: {{this.bonus}}
+
+        <div *ngIf="gameOver">     
+		<br/> 
+		Pontuação Final: {{this.pontuacaoFinal}}
+		</div>
 	</div>
 
 	<br/>
