@@ -1,3 +1,4 @@
+
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { LogoService } from './logo.service';
@@ -5,6 +6,9 @@ import { Card } from './Card';
 import { Logo } from './Logo';
 import { FirebaseService } from '../shared/firebase.service';
 import { UsuarioLogadoService } from './../shared/usuario-logado.service';
+
+import { AngularFire } from 'angularfire2';
+import { SocialLogin } from "app/shared/social-login";
 
 @Component({
   selector: 'app-jogo',
@@ -34,7 +38,7 @@ export class JogoComponent implements OnInit {
 
   constructor(private _logoService: LogoService,
     private firebaseService: FirebaseService,
-    private usuarioLogadoService: UsuarioLogadoService) { }
+    private usuarioLogadoService: UsuarioLogadoService,public af: AngularFire, private socialLogin: SocialLogin) { }
 
   getLogos() {
     this._logoService.getLogos().then(logos => {
@@ -159,7 +163,7 @@ export class JogoComponent implements OnInit {
 
   inserirPontuacaoRanking() {
 
-    let pontuacaoFim = 100 - (this.tentativas - 12) + this.bonus;
+    let pontuacaoFim = 1000 - ((this.tentativas - 12)*10) + this.bonus;
 
     let registroPontuacao = {
       foto: this.usuarioLogado.photoURL,
@@ -171,6 +175,10 @@ export class JogoComponent implements OnInit {
     this.pontuacaoFinal = pontuacaoFim.toString();
     this.firebaseService.inserir(registroPontuacao);
 
+  }
+
+   logout() {
+    this.socialLogin.logout();
   }
 
 

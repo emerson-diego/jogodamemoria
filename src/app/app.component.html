@@ -1,8 +1,6 @@
 <div class="container">
-  <div>
-    <h1 style="text-align:left;float:left;width:90%">{{title}}</h1>
-    <a *ngIf="(af.auth | async)" (click)="logout()" style="text-align:right;float:right;width:10%; padding: 30px 30px 0 0;" href="#">Logout</a>
-  </div>
+
+  <h1>{{title}}</h1>
   <flash-messages></flash-messages>
   <router-outlet></router-outlet>
 </div>

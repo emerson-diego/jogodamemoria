@@ -1,12 +1,13 @@
 <div class="col-md-9">
 
 	<div class="panel-top">
-		<button type="button" class="reset btn btn-primary" (click)="onReset()" style="margin-left:0px !important;">Novo Jogo</button>		
-		{{this.tentativas}} tentativa(s) | Bônus por acertos Consecutivos: {{this.bonus}}
+		<button type="button" class="reset btn btn-primary" (click)="onReset()" style="margin-left:0px !important;">Novo Jogo</button>
+		<a *ngIf="(af.auth | async)" (click)="logout()" style="text-align:right;float:right;" href="#"><img src="../assets/img/logout.png" width="24" height="24" /></a>
+		<div>{{this.tentativas}} tentativa(s) | Bônus: {{this.bonus}}</div>
 
-        <div *ngIf="gameOver">     
-		<br/> 
-		Pontuação Final: {{this.pontuacaoFinal}}
+
+		<div *ngIf="gameOver">
+			<br/> Pontuação Final: {{this.pontuacaoFinal}}
 		</div>
 	</div>
 

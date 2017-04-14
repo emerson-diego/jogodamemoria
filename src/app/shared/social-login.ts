@@ -46,7 +46,7 @@ export class SocialLogin {
                     // user logged in
                     this.usuario = usuario.auth;
                     //  console.log(this.usuario);
-                    console.log(usuario.auth.displayName);
+                    //console.log(usuario.auth.displayName);
                     this.usuarioLogadoService.setUsuarioLogado(usuario.auth);
                     this.router.navigate(['jogo']);
                 }

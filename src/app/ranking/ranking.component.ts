@@ -11,15 +11,16 @@ import { FirebaseService} from './../shared/firebase.service';
 })
 export class RankingComponent implements OnInit {
 
- listaPontuacao:any;
+ listaPontuacao:Array<any>;
 
 
   constructor(private firebaseService: FirebaseService) { }
 
   ngOnInit() {
      this.firebaseService.getListings().subscribe(listaPontuacao => {
-      console.log(listaPontuacao);
-      this.listaPontuacao = listaPontuacao.sort(function(a, b){return b.pontuacao-a.pontuacao});
+      //console.log(listaPontuacao);
+      this.listaPontuacao = listaPontuacao.sort(function(a, b){return b.pontuacao-a.pontuacao}).slice(0,10);
+      //this.listaPontuacao = this.listaPontuacao.slice
    
     });
 
