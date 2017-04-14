@@ -14,7 +14,7 @@ export class LogoService {
   // See the "Take it slow" appendix
   getLogosSlowly() {
     return new Promise<Logo[]>(resolve =>
-      setTimeout(()=>resolve(this.mockLogos.getLogos()), 2000) // 2 seconds
+      setTimeout(() => resolve(this.mockLogos.getLogos()), 2000) // 2 seconds
     );
   }
 

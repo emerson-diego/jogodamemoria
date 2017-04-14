@@ -8,7 +8,7 @@ import { FirebaseService } from '../shared/firebase.service';
 import { UsuarioLogadoService } from './../shared/usuario-logado.service';
 
 import { AngularFire } from 'angularfire2';
-import { SocialLogin } from "app/shared/social-login";
+import { SocialLogin } from 'app/shared/social-login';
 
 @Component({
   selector: 'app-jogo',
@@ -18,12 +18,12 @@ import { SocialLogin } from "app/shared/social-login";
 })
 export class JogoComponent implements OnInit {
 
-  public textInfo: string = '';
-  public textButton: string = 'Recomeçar';
+  public textInfo = '';
+  public textButton = 'Recomeçar';
   public logos: Logo[];
   public cards: Card[];
   public cardAnterior: Card;
-  public canFlip: boolean = false;
+  public canFlip = false;
   public updateBoard;
   public showAll;
   public record: number = Infinity;
@@ -49,9 +49,9 @@ export class JogoComponent implements OnInit {
 
   ngOnInit() {
     this.getLogos();
-    //console.log('teste');
+    // console.log('teste');
     // console.log(this.usuarioLogado.photoURL);
-    //console.log(this.usuarioLogado.displayName);
+    // console.log(this.usuarioLogado.displayName);
   }
 
 
@@ -61,18 +61,18 @@ export class JogoComponent implements OnInit {
     this.acertosConsecutivos = 0;
     this.tentativas = 0;
     this.acertouAnteriormente = false;
-    this.gameOver= false;
+    this.gameOver = false;
     this.cards = [];
-    var size = 2 * (this.logos.length);
+    const size = 2 * (this.logos.length);
     this.logos.forEach(logo => {
-      var primeiroCard = false;
-      var segundoCard = false;
+      let primeiroCard = false;
+      let segundoCard = false;
       while (!primeiroCard || !segundoCard) {
-        var index = Math.floor(size * Math.random());
+        let index = Math.floor(size * Math.random());
         if (this.cards[index] == undefined) {
           this.cards[index] = {
-            "idLogo": logo.id,
-            "encontrado": false, "imagem": "none", "virado": false
+            'idLogo': logo.id,
+            'encontrado': false, 'imagem': 'none', 'virado': false
           };
           if (primeiroCard) {
             segundoCard = true;
@@ -88,7 +88,7 @@ export class JogoComponent implements OnInit {
 
     if (this.canFlip && card != this.cardAnterior && card.encontrado != true) {
 
-      card.imagem = "url(" + 'assets/' + this.logos[card.idLogo].imagem + ")";
+      card.imagem = 'url(' + 'assets/' + this.logos[card.idLogo].imagem + ')';
       card.virado = true;
       if (this.cardAnterior == undefined) {
         this.cardAnterior = card;
@@ -120,11 +120,11 @@ export class JogoComponent implements OnInit {
               this.cardAnterior.encontrado = true;
               this.inserirPontuacaoRanking();
               this.showAll = setTimeout(() => {
-                this.cards.forEach((card) => {
-                  card.encontrado = false;
-                  card.imagem = "url(" + 'assets/' + this.logos[card.idLogo].imagem + ")";
+                this.cards.forEach((cardInterno) => {
+                  cardInterno.encontrado = false;
+                  cardInterno.imagem = 'url(' + 'assets/' + this.logos[cardInterno.idLogo].imagem + ')';
                   this.canFlip = false;
-                  //this.inserirPontuacaoRanking();
+                  // this.inserirPontuacaoRanking();
                 });
               }, 500);
 
@@ -132,14 +132,14 @@ export class JogoComponent implements OnInit {
 
 
           }
-          else { //não acertou
+          else { // não acertou
             this.acertouAnteriormente = false;
             this.acertosConsecutivos = 0;
           }
           card.virado = false;
           this.cardAnterior.virado = false;
-          card.imagem = "none";
-          this.cardAnterior.imagem = "none";
+          card.imagem = 'none';
+          this.cardAnterior.imagem = 'none';
           this.cardAnterior = undefined;
 
           this.canFlip = true;
@@ -155,7 +155,6 @@ export class JogoComponent implements OnInit {
   onReset() {
     clearTimeout(this.updateBoard);
     clearTimeout(this.showAll);
-    this.textButton = "Recomeçar";
     this.initBoard();
     this.cardAnterior = undefined;
 

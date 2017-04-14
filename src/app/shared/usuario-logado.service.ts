@@ -8,11 +8,11 @@ export class UsuarioLogadoService {
   constructor() { }
 
 
-  setUsuarioLogado(usuarioLogado: firebase.User){
+  setUsuarioLogado(usuarioLogado: firebase.User) {
     this.usuarioLogado = usuarioLogado;
   }
 
-  getUsuarioLogado(){
+  getUsuarioLogado() {
     return this.usuarioLogado;
   }
 

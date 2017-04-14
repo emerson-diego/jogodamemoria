@@ -18,17 +18,13 @@ export class RankingComponent implements OnInit {
 
   ngOnInit() {
      this.firebaseService.getListings().subscribe(listaPontuacao => {
-      //console.log(listaPontuacao);
-      this.listaPontuacao = listaPontuacao.sort(function(a, b){return b.pontuacao-a.pontuacao}).slice(0,10);
-      //this.listaPontuacao = this.listaPontuacao.slice
-   
+      // console.log(listaPontuacao);
+      this.listaPontuacao = listaPontuacao.sort( function(a, b) { return b.pontuacao-a.pontuacao }).slice(0,10);
+      // this.listaPontuacao = this.listaPontuacao.slice
     });
 
   }
 
-   ordenaLista(){
-      
-    }
 
 
 }

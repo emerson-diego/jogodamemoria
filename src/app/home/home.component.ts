@@ -29,13 +29,10 @@ export class HomeComponent implements OnInit {
   }
 
   login(provider:String) {
-    //this.af.auth.login();
+    // this.af.auth.login();
     this.socialLogin.login(provider);
 
   }
 
 
-  ngOnDestroy() {
-   //this.af.auth.unsubscribe();
-  }
 }

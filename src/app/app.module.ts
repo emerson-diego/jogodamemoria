@@ -30,10 +30,6 @@ const appRoutes: Routes = [
   {path: 'jogo', component:JogoComponent}
 ]
 
-//const firebaseAuthConfig = {
-  //provider: AuthProviders.Google,
-  //method: AuthMethods.Popup
-//};
 
 @NgModule({
   declarations: [

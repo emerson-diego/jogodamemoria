@@ -12,20 +12,14 @@ export class AppComponent implements OnInit {
 
   title = 'Jogo da Memória dos \"Heróis Brasileiros\"';
 
-  constructor( ){
-
+  constructor() {
   }
-
 
 
   ngOnInit(): void {
 
   }
 
- 
-  
-
-  
 
 
 }

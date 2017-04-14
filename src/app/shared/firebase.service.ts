@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFire, FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
 import * as firebase from 'firebase';
-import "rxjs/add/operator/map";
+import 'rxjs/add/operator/map';
 
 @Injectable()
 export class FirebaseService {
@@ -13,10 +13,10 @@ export class FirebaseService {
     this.listaPontuacao = this.af.database.list('/pontuacao', {
       query: {
         orderByChild: 'pontuacao',
-       // limitToFirst: 10
+        // limitToFirst: 10
       }
-    }) as FirebaseListObservable<RegistroPontuacao[]>
-    //.map((array) => array.reverse()) as FirebaseListObservable<RegistroPontuacao[]>
+    }) as FirebaseListObservable<RegistroPontuacao[]>;
+    // .map((array) => array.reverse()) as FirebaseListObservable<RegistroPontuacao[]>
   }
 
   getListings() {
@@ -34,10 +34,8 @@ export class FirebaseService {
 
 
 
-
 interface RegistroPontuacao {
   $key?: string;
   nome?: string;
   pontuacao?: number;
-
 }
