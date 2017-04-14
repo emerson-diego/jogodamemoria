@@ -6,9 +6,9 @@ import { Card } from './Card';
 import { Logo } from './Logo';
 import { FirebaseService } from '../shared/firebase.service';
 import { UsuarioLogadoService } from './../shared/usuario-logado.service';
-
+import { SocialLogin } from '../shared/social-login';
 import { AngularFire } from 'angularfire2';
-import { SocialLogin } from 'app/shared/social-login';
+
 
 @Component({
   selector: 'app-jogo',
@@ -35,6 +35,8 @@ export class JogoComponent implements OnInit {
   private acertouAnteriormente: boolean;
   public pontuacaoFinal: string;
   public gameOver:boolean;
+
+  public teste;
 
   constructor(private _logoService: LogoService,
     private firebaseService: FirebaseService,
@@ -163,12 +165,13 @@ export class JogoComponent implements OnInit {
   inserirPontuacaoRanking() {
 
     let pontuacaoFim = 1000 - ((this.tentativas - 12)*10) + this.bonus;
+    let dataHora = new Date().toLocaleDateString() + ' '  + new Date().toLocaleTimeString();
 
     let registroPontuacao = {
       foto: this.usuarioLogado.photoURL,
       nome: this.usuarioLogado.displayName,
       pontuacao: pontuacaoFim,
-      data: new Date()
+      data: dataHora
     }
 
     this.pontuacaoFinal = pontuacaoFim.toString();
