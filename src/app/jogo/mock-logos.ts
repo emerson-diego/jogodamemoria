@@ -21,7 +21,7 @@ export class MockLogos {
             { 'id': 8, 'name': 'Tiririca', 'imagem': 'img/tiririca.png' },
             { 'id': 9, 'name': 'Renan Calheiros', 'imagem': 'img/renan.png' },
             { 'id': 10, 'name': 'José Maranhão', 'imagem': 'img/maranhao.png' },
-            { 'id': 11, 'name': 'Cássio Cunha Lima', 'imagem': 'img/cassio.png' }
+            { 'id': 11, 'name': 'Cássio', 'imagem': 'img/cassio.png' }
         ];
     }
 

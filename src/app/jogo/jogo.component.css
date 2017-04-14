@@ -1,8 +1,8 @@
 
 
 @media (max-width: 599px) {    
-  body,h1,span,button { 
-    font-size: 16px; 
+  body,h1,span,button,p { 
+    font-size: 8px; 
   }
 
   .cards div{
@@ -15,8 +15,8 @@
 } 
 
 @media (min-width: 600px) {    
-  body,h1,span,button { 
-    font-size: 16px; 
+  body,h1,span,button,p { 
+    font-size: 10px; 
   }
 
   .cards div{
@@ -29,8 +29,8 @@
 } 
 
 @media (min-width: 700px) {    
-  body,h1,span,button { 
-    font-size: 16px; 
+  body,h1,span,button,p { 
+    font-size: 12px; 
   }
 
   .cards div{
@@ -43,8 +43,8 @@
 } 
 
 @media (min-width: 800px) {    
-  body,h1,span,button { 
-    font-size: 16px; 
+  body,h1,span,button,p { 
+    font-size: 14px; 
   }
 
   .cards div{
@@ -57,7 +57,7 @@
 } 
 
 @media (min-width: 1200px) {    
-  body,h1,span,button { 
+  body,h1,span,button,p { 
     font-size: 20px; 
   }
 
@@ -99,7 +99,7 @@
 
      .cards p.virado {
       display:block;
-      font-size:12px;
+   
     }
 
     .cards div:hover {
